@@ -1,0 +1,14 @@
+{
+    "method": "",
+    "message": "",
+    "pathFile": "",
+    "emailSender": "",
+    "emailPassword": "",
+    "senderDisplayName": "",
+    "sendTo": "",
+    "emailTitle": "",
+    "smtpHost": "",
+    "smtpPort": 587,
+    "defaultCredentail": false,
+    "enableSsl": true
+}
