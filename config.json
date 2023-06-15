@@ -10,5 +10,6 @@
     "smtpHost": "",
     "smtpPort": 587,
     "defaultCredentail": false,
-    "enableSsl": true
+    "enableSsl": true,
+    "sendGridApiKey": ""
 }

@@ -30,14 +30,17 @@ namespace SendMailApp
                     case "netmail":
                         SendMailNetMail.Send(config.message, config.pathFile);
                         break;
+                    case "sendgrid":
+                        SendMailSendGrid.SendAsync(config.message, config.pathFile).Wait();
+                        break;
                 }
                 Console.WriteLine("No Error Found");
-                Console.ReadKey();
+                // Console.ReadKey();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                Console.ReadKey();
+                // Console.ReadKey();
             }
         }
     }
@@ -56,5 +59,6 @@ namespace SendMailApp
         public string method { get; set; }
         public bool defaultCredentail { get; set; }
         public bool enableSsl { get; set; }
+        public string sendGridApiKey { get; set; }
     }
 }
