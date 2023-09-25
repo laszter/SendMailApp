@@ -54,7 +54,7 @@ namespace SendMailApp
             smtp.EnableSsl = true;
             smtp.Host = config.smtpHost;
             smtp.Port = config.smtpPort;
-            smtp.Credentials = new NetworkCredential(config.emailSender, config.emailPassword);
+            smtp.Credentials = new NetworkCredential(config.emailUsername, config.emailPassword);
             smtp.Send(mail);
         }
     }

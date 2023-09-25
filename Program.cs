@@ -48,6 +48,7 @@ namespace SendMailApp
     class Config
     {
         public string emailSender { get; set; }
+        public string emailUsername { get; set; }
         public string emailPassword { get; set; }
         public string senderDisplayName { get; set; }
         public string sendTo { get; set; }

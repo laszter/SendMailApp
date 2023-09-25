@@ -25,6 +25,7 @@ namespace SendMailApp
             Config config = JsonConvert.DeserializeObject<Config>(textConfig);
 
             string sendFrom = config.emailSender;
+            string Username = config.emailUsername;
             string Password = config.emailPassword;
             string senderUserNameBMS = config.senderDisplayName;
             string emails = config.sendTo;
@@ -49,7 +50,7 @@ namespace SendMailApp
             int port = config.smtpPort;
             MimeMailer mailer = new MimeMailer(host, port);
 
-            mailer.User = sendFrom;
+            mailer.User = Username;
             mailer.Password = Password;
             mailer.SslType = port == 465 ? SslMode.Ssl : SslMode.Tls;
             mailer.AuthenticationMode = AuthenticationType.Base64;
