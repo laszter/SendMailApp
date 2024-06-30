@@ -39,7 +39,7 @@ namespace SendMailApp
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex);
                 // Console.ReadKey();
             }
         }

@@ -50,10 +50,18 @@ namespace SendMailApp
             int port = config.smtpPort;
             MimeMailer mailer = new MimeMailer(host, port);
 
-            mailer.User = Username;
-            mailer.Password = Password;
+            if (config.defaultCredentail)
+            {
+                mailer.AuthenticationMode = AuthenticationType.UseDefualtCridentials;
+            }
+            else
+            {
+                mailer.AuthenticationMode = AuthenticationType.Base64;
+                mailer.User = Username;
+                mailer.Password = Password;
+            }
+
             mailer.SslType = port == 465 ? SslMode.Ssl : SslMode.Tls;
-            mailer.AuthenticationMode = AuthenticationType.Base64;
             mailer.SendMail(mail);
         }
     }
